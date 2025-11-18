@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap');
+
+body {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.topbar {
+  width: 100%;
+  background: #fff;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+  position: sticky;
+  top: 0;
+  z-index: 1200;
+}
+
+.topbar-container {
+  display: flex;
+  align-items: flex-end; 
+  justify-content: space-around;
+  padding: 0.8rem 2rem;
+  flex-direction: row-reverse;
+}
+
+.topbar-logo img {
+  height: 65px;
+  transition: 0.3s ease;
+}
+
+.topbar-logo img:hover {
+  transform: scale(1.05);
+}
+
+nav ul {
+  display: flex;
+  gap: 2.5rem;
+  align-items: flex-end;
+  padding-bottom: 5px;
+  list-style: none;
+}
+
+nav ul li a {
+  color: #000;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 500;
+  padding-bottom: 4px;
+  transition: 0.25s ease;
+  position: relative;
+}
+
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  height: 2px;
+  width: 0%;
+  background: #00539c;
+  transition: width 0.25s ease;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+nav ul li a.active {
+  color: #00539c;
+  font-weight: 600;
+}
+
+nav ul li a.active::after {
+  width: 100%;
+}
+
+
+.hamburger-btn {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.hamburger-btn span {
+  width: 28px;
+  height: 3px;
+  background: #ff7d2c;
+  transition: 0.3s ease;
+}
+
+.hamburger-btn.open span:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+.hamburger-btn.open span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger-btn.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+@media (max-width: 768px) {
+
+  .topbar-container {
+    flex-direction: row !important;
+    justify-content: space-between;
+    align-items: center !important;
+  }
+
+  .hamburger-btn {
+    display: flex;
+    order: 1;
+  }
+
+  .topbar-logo {
+    order: 2;
+  }
+
+  nav {
+    order: 3;
+    position: absolute;
+    top: 95px;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+    padding: 0;
+  }
+
+  nav.open {
+    max-height: 500px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 1.4rem;
+    padding: 1.5rem 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  nav ul li {
+    width: 100%;
+  }
+
+  nav ul li a {
+    display: block;
+    width: 100%;
+  }
+}
+
+
+.accent-bar {
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(
+    to right,
+    white,
+    rgba(255, 125, 44, 0.4),
+    #ff7d2c,
+    rgba(255, 125, 44, 0.5),
+    white
+  );
+}

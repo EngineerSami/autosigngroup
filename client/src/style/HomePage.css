@@ -1,0 +1,102 @@
+.slider-container {
+  position: relative;
+  width: 100%;
+  height: 550px;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+.caption-box {
+  position: absolute;
+  top: 40%;
+  left: 10%;
+  background: rgba(0, 73, 147, 0.85);
+  color: white;
+  padding: 30px 40px;
+  max-width: 500px;
+  border-radius: 3px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.slide.active .caption-box {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.caption-box h2 {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.caption-box p {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.caption-box a {
+  margin-top: 15px;
+  display: inline-block;
+  color: white;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.nav-area {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  z-index: 10;
+}
+
+.arrow {
+  font-size: 28px;
+  background: rgba(255, 255, 255, 0);
+  border: none;
+  padding: 6px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: 0.3s;
+  color: white;
+}
+
+
+.dots {
+  display: flex;
+  gap: 8px;
+}
+
+.dot {
+  height: 10px;
+  width: 10px;
+  background: #bbb;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.active-dot {
+  background: #004077;
+}
+
+
