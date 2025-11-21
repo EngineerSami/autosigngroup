@@ -85,7 +85,7 @@ function ContactUs() {
 
           <p className="info-item">
             <FaMapMarkerAlt className="icon" />
-            Ramallah – Betunia, Palestine
+            Palestine, Ramallah Industrial Zone – Jafa Street
           </p>
 
           <p className="info-item">

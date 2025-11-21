@@ -10,10 +10,8 @@ function TopBar() {
   const toggleMenu = () => setMenuOpen(!menuOpen);
   const closeMenu = () => setMenuOpen(false);
 
-  const activeLink =
-    location.pathname === '/contact'
-      ? '/contact'
-      : location.hash || '#home';
+  // Detect current page or hash
+  const activeLink = location.pathname + location.hash;
 
   return (
     <header className="topbar">
@@ -31,34 +29,34 @@ function TopBar() {
               <Link 
                 to="/"
                 onClick={closeMenu}
-                className={activeLink === '#home' ? 'active' : ''}>
+                className={activeLink === '/' ? 'active' : ''}>
                 Home
               </Link>
             </li>
 
             <li>
               <Link 
-                to="#about"
+                to="/about"
                 onClick={closeMenu}
-                className={activeLink === '#about' ? 'active' : ''}>
+                className={activeLink === '/about' ? 'active' : ''}>
                 About Us
               </Link>
             </li>
 
             <li>
               <Link 
-                to="#portfolio"
+                to="/#portfolio"
                 onClick={closeMenu}
-                className={activeLink === '#portfolio' ? 'active' : ''}>
+                className={activeLink === '/#portfolio' ? 'active' : ''}>
                 Portfolio
               </Link>
             </li>
 
             <li>
               <Link 
-                to="#news"
+                to="/#news"
                 onClick={closeMenu}
-                className={activeLink === '#news' ? 'active' : ''}>
+                className={activeLink === '/#news' ? 'active' : ''}>
                 News
               </Link>
             </li>

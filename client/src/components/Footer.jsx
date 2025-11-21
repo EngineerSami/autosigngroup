@@ -35,7 +35,7 @@ function Footer() {
 
         <p className="footer-contact">
           <FaMapMarkerAlt className="icon" />
-          Ramallah, Palestine
+          Palestine, Ramallah Industrial Zone – Jafa Street
         </p>
 
         <p className="footer-contact">
