@@ -1,7 +1,6 @@
 require('dotenv').config();
 const mongoose = require('mongoose');
 
-// Ensure environment variables are loaded
 const dbName = process.env.DB;
 const username = process.env.ATLAS_USERNAME;
 const password = process.env.ATLAS_PASSWORD;
@@ -11,10 +10,10 @@ if (!dbName || !username || !password) {
     process.exit(1);
 }
 
-// Encode password in case it contains special characters
 const encodedPassword = encodeURIComponent(password);
 
-const uri = `mongodb+srv://${username}:${encodedPassword}@cluster6.uhh9k.mongodb.net/${dbName}?retryWrites=true&w=majority`;
+const uri = `mongodb+srv://${username}:${encodedPassword}@cluster0.ckojjkr.mongodb.net/?appName=Cluster0`;
+
 
 mongoose.connect(uri)
     .then(() => console.log("✅ Successfully connected to the database"))

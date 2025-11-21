@@ -10,7 +10,10 @@ function TopBar() {
   const toggleMenu = () => setMenuOpen(!menuOpen);
   const closeMenu = () => setMenuOpen(false);
 
-  const activeLink = location.hash || '#home';
+  const activeLink =
+    location.pathname === '/contact'
+      ? '/contact'
+      : location.hash || '#home';
 
   return (
     <header className="topbar">
@@ -62,9 +65,9 @@ function TopBar() {
 
             <li>
               <Link 
-                to="#contact"
+                to="/contact"
                 onClick={closeMenu}
-                className={activeLink === '#contact' ? 'active' : ''}>
+                className={activeLink === '/contact' ? 'active' : ''}>
                 Contact Us
               </Link>
             </li>
